@@ -1,0 +1,15 @@
+@echo off
+set arg=harem
+
+set /p steamapps=Enter the path to your 'steamapps' directory and press ENTER: 
+set steamapps=%steamapps:"=%
+
+set dota=%steamapps%\common\dota 2 beta\
+set cbase=%dota%\content\dota_addons\dota_%arg%
+set gbase=%dota%\game\dota_%arg%
+
+echo Making directories...
+mkdir "%cbase%"
+mkdir "%gbase%"
+
+echo Copying files...

@@ -9,41 +9,14 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <style>
-    .titleText {
-      margin: 0;
-      color: white;
-      display: inline;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 5px 7px;
-      background: rgba(0,0,0,0.5);
-    }
-    .player {
-      margin: 0;
-      position: absolute;
-      bottom: 0px;
-      right: -4px;
-      z-index 2;
-      width: 105%;
-    }
-    .player-sm {
-      position:absolute;
-      bottom: 0px;
-      left: 60%;
-    }
-    .portrait {
-      transform: scale(1,1.25);
-      display: inline-block;
-    }
-  </style>
-
-
-
+  <link href="css/harem.css" type="text/css" rel="stylesheet"/>
 </head>
 <body style="background:#3e5260">
+  <textarea id="script"; rows="600"; style="display:none";>
+Hello
+  </textarea>
+  <textarea id="script2"; rows="600"; style="display:none";></textarea>
+
   <!-- Navbar -->
   <div class="navbar-fixed">
       <nav class="white" role="navigation">
@@ -64,25 +37,24 @@
   <!-- End navbar -->
 
   <!-- Main container -->
-  <div class="container z-depth-2" style="background:white">
+  <div class="container z-depth-2 grey lighten-5">
     <div class="row">
       <div class="col s12 m8 offset-m1">
-
-
         <div id="megakills" class="row section scrollspy">
           <h5 class="header light">
             Select megakills
+            <a class="material-icons select-all right large">add_circle</a>
           </h5>
           <!-- card -->
           <div class="col s4 m3">
-            <div id="rise" class="card hoverable waves-effect waves-light">
+            <div id="rise_best_girl" class="card hoverable waves-effect waves-light">
               <div class="card-image">
-                <img src="images/rise.png">
+                <img src="images/rise_best_girl.png">
                 <div class="titleText">
                   Rise Kujikawa (JP)
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/rise_best_girl.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -98,7 +70,7 @@
                   Chitoge Kirisaki
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/chitoge.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -114,7 +86,7 @@
                   Kosaki Onodera
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/onodera.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -130,7 +102,7 @@
                   Marika Tachibana
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/marika.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -146,7 +118,7 @@
                   Megumi Katou
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/katou.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -162,7 +134,7 @@
                   Hestia
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/hestia.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -178,26 +150,29 @@
                   Iroha Isshiki
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/iroha.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
           </div>
           <!-- end card -->
         </div>
+        <div class="divider"></div>
         <div class="row">
-          <h5 class="header light">Guest megakills</h5>
+          <h5 class="header light">Guest megakills
+            <a class="material-icons select-all right large">add_circle</a>
+          </h5>
 
           <!-- card -->
           <div class="col s4 m3">
-            <div id="rise2" class="card hoverable waves-effect waves-light">
+            <div id="rise_eng_girl" class="card hoverable waves-effect waves-light">
               <div class="card-image">
-                <img src="images/rise2.jpg">
+                <img src="images/rise_eng_girl.jpg">
                 <div class="titleText">
                   Rise Kujikawa (EN) by /u/thatjesushair
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/rise_eng_girl.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -213,7 +188,7 @@
                   Kongou by /u/Traesto
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/kongou.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -229,7 +204,7 @@
                   Tamamo by C@$†ёr
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/tamamo.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -245,7 +220,7 @@
                   Umi Sonoda by /u/Pibriamal
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/umi.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -253,9 +228,11 @@
           <!-- end card -->
 
         </div>
+        <div class="divider"></div>
         <div class="row">
           <h5 id="announcers" class="section scrollspy header light">
             Announcers
+            <a class="material-icons select-all right large">add_circle</a>
           </h5>
           <!-- card -->
           <div class="col s4 m3">
@@ -266,7 +243,7 @@
                   Rise Kujikawa (JP)
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/rise3.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -275,21 +252,24 @@
 
 
         </div>
+        <div class="divider"></div>
         <div id="herovo" class="section scrollspy row">
           <h5 class="header light">
             Hero Voiceovers
+
+            <a class="material-icons select-all right large">add_circle</a>
           </h5>
 
           <!-- card -->
           <div class="col s4 m2">
-            <div id="drow_ranger" class="card hoverable waves-effect waves-light">
+            <div id="drowranger" class="card hoverable waves-effect waves-light">
                 <div class="video">
                     <video class="responsive-video portrait" loop>
-                      <source src="videos/npc_dota_hero_drow_ranger.webm">
+                      <source src="videos/npc_dota_hero_drowranger.webm">
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/drowranger.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -306,7 +286,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/luna.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -323,7 +303,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/medusa.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -340,7 +320,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/naga_siren.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -357,7 +337,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/phantom_assassin.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -374,7 +354,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/spectre.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -391,7 +371,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/templar_assassin.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -408,7 +388,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/vengefulspirit.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -418,14 +398,14 @@
 
           <!-- card -->
           <div class="col s4 m2">
-            <div id="crystal_maiden" class="card hoverable waves-effect waves-light">
+            <div id="crystalmaiden" class="card hoverable waves-effect waves-light">
                 <div class="video">
                     <video class="responsive-video portrait" loop>
-                      <source src="videos/npc_dota_hero_crystal_maiden.webm">
+                      <source src="videos/npc_dota_hero_crystalmaiden.webm">
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/crystalmaiden.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -442,7 +422,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/death_prophet.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -459,7 +439,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/enchantress.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -476,7 +456,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/lina.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -493,7 +473,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/puck.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -510,7 +490,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/queenofpain.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -527,7 +507,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/windrunner.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -544,7 +524,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/winter_wyvern.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -561,7 +541,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/wisp.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -578,7 +558,7 @@
                     </video>
                 </div>
                 <audio class="player-sm" controls>
-                  <source src="sounds/dummy.mp3" type="audio/mpeg">
+                  <source src="sounds/broodmother.mp3" type="audio/mpeg">
                 </audio>
 
             </div>
@@ -602,24 +582,16 @@
               </ul>
               <div class="divider"></div>
               <br>
-              <div class="waves-effect waves-light btn-large red"><i class="material-icons left">file_download</i>Finished!</a>
+              <div id="confirm" class="waves-effect waves-light btn-large red"><i class="material-icons left">file_download</i>Finished!</a>
               </div>
             </div>
         </div>
       </div>
       <!-- end sidebar -->
-
     </div>
-
   </div>
 
-
   <!-- End main container -->
-
-
-
-
-
   <footer class="page-footer grey darken-4">
     <div class="container">
       <div class="row">
@@ -627,6 +599,7 @@
           <h5 class="grey-text text-lighten-4 header">Current poll</h5>
           <iframe src="http://strawpoll.me/embed_1/7260648" style="width: 400px; height: 300px; border: 0;" scrolling="no">Loading poll...</iframe>
         </div>
+        <div class="divide"></div>
         <div class="col l6 s12">
           <p class="grey-text text-lighten-4">Hello all,</p>
           <p class="grey-text text-lighten-4">Making this mod was a lot of fun, but it also has taken a lot of work. Unfortunately Valve does not appear to be interested in supporting client-side modding, and it can always be patched out. At the very least, no one I have known has been VAC banned because they modded their game</p>
@@ -642,24 +615,13 @@
     </div>
   </footer>
 
-
-  <!--  Scripts-->
+  <!--Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-  <script>
-    var figure = $(".video").hover( hoverVideo, hideVideo );
-
-    function hoverVideo(e) {  
-        $('video', this).get(0).play(); 
-    }
-
-    function hideVideo(e) {
-        $('video', this).get(0).pause(); 
-    }
-    $(document).ready(function(){
-      $('.scrollspy').scrollSpy();
-    });
-  </script>
+  <script src="js/toggle.js"></script>
+  <script src="js/savetext.js"></script>
+  <script src="js/generate-bat.js"></script>
+  <script src="js/harem.js"></script>
   </body>
 </html>
