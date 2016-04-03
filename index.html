@@ -572,6 +572,23 @@ Hello
         </div>
       </div>
 
+      <!-- Modal -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h5>Installation guide</h5>
+          <p>1. Download the sound files.</p>
+          <p>2. Download your custom installation script <b>(install.bat)</b>.</p>
+          <p>3. Extract the ZIP file.</p>
+          <p>4. Place <b>install.bat</b> into the extracted <b>harem_spring_2016</b> folder. </p>
+          <p>5. Run <b>install.bat</b> and follow the instructions.</p>
+        </div>
+        <div class="modal-footer">
+          <a id="confirm" class="waves-effect waves-light btn-large btn-flat"><i class="material-icons left">file_download</i>Script</a>
+          <a href="https://my.mixtape.moe/uylvaq.zip" class="waves-effect waves-light btn-large btn-flat"><i class="material-icons left">file_download</i>Sounds</a>
+        </div>
+      </div>
+      <!-- End Modal -->
+
       <!-- Sidebar -->
       <div class="col hide-on-small-only m2">
           <div class="toc-wrapper pinned" style="top: 10%;">
@@ -584,7 +601,7 @@ Hello
               </ul>
               <div class="divider"></div>
               <br>
-              <div id="confirm" class="waves-effect waves-light btn-large red"><i class="material-icons left">file_download</i>Finished!</a>
+              <a class="waves-effect waves-light btn-large red modal-trigger" href="#modal"><i class="material-icons left">done</i>Finished!</a>
               </div>
             </div>
         </div>

@@ -5,6 +5,10 @@ var figure = $("#confirm").click( getSelected );
 $("#script").load("install.txt");
 $("#script2").load("install2.txt");
 
+$(document).ready(function(){
+    $('.modal-trigger').leanModal();
+});
+
 function getSelected(e) {
   var all = $(".card.selected").map(function() {
     return this.id;
