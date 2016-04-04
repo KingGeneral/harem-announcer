@@ -1,3 +1,9 @@
+.container.s12 {
+   width: 100%; 
+}
+.header.light {
+  width: 80%;
+}
 .select-all {
   cursor: pointer;
 }

@@ -8,6 +8,16 @@ set dota=%steamapps%\common\dota 2 beta\
 set cbase=%dota%\content\dota_addons\dota_%arg%
 set gbase=%dota%\game\dota_%arg%
 
+echo Checking if mod is already installed...
+IF EXIST "%cbase%" (
+    echo Trying to remove previous installation:
+    rmdir /s "%cbase%"
+)
+IF EXIST "%gbase%" (
+    echo Trying to remove previous installation:
+    rmdir /s "%gbase%"
+)
+
 echo Making directories...
 mkdir "%cbase%"
 mkdir "%gbase%"
