@@ -4,9 +4,10 @@ set arg=harem
 set /p steamapps=Enter the path to your 'steamapps' directory and press ENTER: 
 set steamapps=%steamapps:"=%
 
-set dota=%steamapps%\common\dota 2 beta\
+set dota=%steamapps%\common\dota 2 beta
 set cbase=%dota%\content\dota_addons\dota_%arg%
-set gbase=%dota%\game\dota_%arg%
+set gbase=%dota%\game\dota_addons\dota_%arg%
+set glang=%dota%\game\dota_%arg%
 
 echo Checking if mod is already installed...
 IF EXIST "%cbase%" (
@@ -20,6 +21,6 @@ IF EXIST "%gbase%" (
 
 echo Making directories...
 mkdir "%cbase%"
-mkdir "%gbase%"
+mkdir "%glang%"
 
 echo Copying files...

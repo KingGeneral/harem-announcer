@@ -62,7 +62,7 @@ function genMegaCommands(list) {
 }
 
 function genScript(selections) {
-    var mega_all = ["rise_best_girl", "chitoge", "onodera", "marika", "katou", "hestia", "iroha", "rise_eng_girl", "kongou", "tamamo", "umi"];
+    var mega_all = ["rise_best_girl", "chitoge", "onodera", "marika", "katou", "hestia", "iroha", "megumin", "rise_eng_girl", "kongou", "tamamo", "umi"];
     var ann_all = ["rise3"];
     var hvo_all = ["broodmother", "crystalmaiden", "death_prophet", "drowranger", "enchantress", "lina", "luna", "medusa", "naga_siren", "phantom_assassin", "puck", "queenofpain", "spectre", "templar_assassin", "windrunner", "winter_wyvern", "wisp", "vengefulspirit"]
     var mega_list = selections.filter(function(n) {

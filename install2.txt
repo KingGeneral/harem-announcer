@@ -4,7 +4,7 @@ echo Compiling files in content folder...
 "bin\vpk.exe" "%dota%\game\dota_addons\dota_%arg%"
 
 echo Moving files to game folder...
-echo f | xcopy /d "%dota%\game\dota_addons\dota_%arg%.vpk" "%gbase%\pak01_dir.vpk"
+copy "%dota%\game\dota_addons\dota_%arg%.vpk" "%glang%\pak01_dir.vpk"
 
 
 set /p DUMMY=Add "-language %arg%" to launch options to complete install. Press ENTER to exit.
