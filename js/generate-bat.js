@@ -1,11 +1,25 @@
-
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 
 function genMegakills(list) {
-  var sounds = ["kill_double", "kill_triple", "kill_ultra", "kill_rampage", "kill_spree", "kill_dominate", "kill_mega", "kill_unstop", "kill_wicked", "kill_monster", "kill_godlike", "kill_holy", "1stblood", "ownage"];
+  var sounds = [
+    "kill_double",
+    "kill_triple",
+    "kill_ultra",
+    "kill_rampage",
+    "kill_spree",
+    "kill_dominate",
+    "kill_mega",
+    "kill_unstop",
+    "kill_wicked",
+    "kill_monster",
+    "kill_godlike",
+    "kill_holy",
+    "1stblood",
+    "ownage"
+  ];
 
   var arr = []
   for (var i = 0; i < sounds.length; i++) {
@@ -24,7 +38,7 @@ function genMegakills(list) {
     }
 
     arr.push('}}');
-    arr.push('"volume" {"value" "0.600000"}');
+    arr.push('"volume" {"value" "0.700000"}');
     arr.push('"pitch" {"value" "1.000000"}');
     arr.push('}}}}}');
   }
@@ -32,39 +46,43 @@ function genMegakills(list) {
   return script;
 }
 
-
-function genCommands(name) {
-    var copy_evt = "xcopy /E /d \"content\\soundevents\\voscripts\\*%s*\" \"\%cbase\%\\soundevents\\voscripts\\\"\n".replaceAll("%s",name);
-    var copy_snd = "xcopy /E /d \"content\\sounds\\vo\\%s\" \"\%cbase\%\\sounds\\vo\\%s\\*\"\n".replaceAll("%s",name);
-
-    $("#script").append(copy_evt);
-    $("#script").append(copy_snd);
-    
-}
-
-function genAnnCommands(name) {
-    var copy_evt1 = "xcopy /E /d \"content\\soundevents\\voscripts\\game_sounds_vo_announcer.vsndevts\" \"\%cbase\%\\soundevents\\voscripts\\\"\n"
-    var copy_evt2 = "xcopy /E /d \"content\\soundevents\\voscripts\\game_sounds_vo_announcer_dlc_glados.vsndevts\" \"\%cbase\%\\soundevents\\voscripts\\\"\n"
-    var copy_snd = "xcopy /E /d \"content\\sounds\\vo\\announcer_dlc_glados\" \"\%cbase\%\\sounds\\vo\\announcer_dlc_glados\\*\"\n"
-
-    $("#script").append(copy_evt1);
-    $("#script").append(copy_evt2);
-    $("#script").append(copy_snd);
-}
-
-function genMegaCommands(list) {
-    var copy_evt = "xcopy /E /d \"game_sounds_vo_announcer_killing_spree.vsndevts\" \"\%cbase\%\\soundevents\\voscripts\\\"\n"
-    var copy_snd = "xcopy /E /d \"content\\sounds\\vo\\announcer_killing_spree\" \"\%cbase\%\\sounds\\vo\\announcer_killing_spree\\*\"\n"
-
-    $("#script").append(genMegakills(list));
-    $("#script").append(copy_evt);
-    $("#script").append(copy_snd);
-}
-
 function genScript(selections) {
-    var mega_all = ["rise_best_girl", "chitoge", "onodera", "marika", "katou", "hestia", "iroha", "megumin", "rise_eng_girl", "kongou", "tamamo", "umi"];
+    var mega_all = [
+        "rise_best_girl",
+        "chitoge",
+        "onodera",
+        "marika",
+        "katou",
+        "hestia",
+        "iroha",
+        "rem",
+        "rise_eng_girl",
+        "kongou",
+        "tamamo",
+        "umi"
+    ];
     var ann_all = ["rise3"];
-    var hvo_all = ["broodmother", "crystalmaiden", "death_prophet", "drowranger", "enchantress", "lina", "luna", "medusa", "naga_siren", "phantom_assassin", "puck", "queenofpain", "spectre", "templar_assassin", "windrunner", "winter_wyvern", "wisp", "vengefulspirit"]
+    var hvo_all = [
+        "broodmother",
+        "crystalmaiden",
+        "death_prophet",
+        "drowranger",
+        "enchantress",
+        "lina",
+        "luna",
+        "medusa",
+        "naga_siren",
+        "phantom_assassin",
+        "puck",
+        "queenofpain",
+        "spectre",
+        "templar_assassin",
+        "windrunner",
+        "winter_wyvern",
+        "wisp",
+        "vengefulspirit"
+    ];
+
     var mega_list = selections.filter(function(n) {
         return mega_all.indexOf(n) != -1;
     });
@@ -74,16 +92,27 @@ function genScript(selections) {
     var hvo_list = selections.filter(function(n) {
         return hvo_all.indexOf(n) != -1;
     });
+    var doCopy = function(vpk, n) {
+       var num = (n < 10 ? '0' : '') + n; 
+       $("#script").append('\ncopy "'+vpk+'" "%mod%\\pak'+num+'_dir.vpk"');
+    }
+    var pak_idx = 1;
     if (mega_list.length > 0) {
-        genMegaCommands(mega_list);
+        $("#script").append(genMegakills(mega_list));
+        $("#script").append("\nCALL bin/compile.bat");
+        doCopy("my_announcer_config.vpk", pak_idx);
+        pak_idx++;
+        doCopy("announcer_kill_spree.vpk", pak_idx);
+        pak_idx++;
     }
     if (ann_list.length > 0) {
-        genAnnCommands();
+        doCopy("rise_announcer.vpk", pak_idx);
+        pak_idx++;
     }
     for (var i = 0; i < hvo_list.length; i++) {
-        genCommands(hvo_list[i]);
+        doCopy("dotajp_" + hvo_list[i] + ".vpk", pak_idx);
+        pak_idx++;
     }
-    var txt2 = $("#script2").val();
-    $("#script").append(txt2);
+    $("#script").append("\nset /p asdf=Press ENTER to exit.");
     saveTextAsFile();
 }

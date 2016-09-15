@@ -4,6 +4,17 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <title>Harem Announcer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var auds = document.getElementsByClassName("player");
+        var i;
+        for(i = 0; i < auds.length; i++) {
+            console.log(auds[i]);
+            auds[i].volume = 0.5;
+        }
+    });
+    </script>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -160,15 +171,15 @@ Hello
           <!-- end card -->
 
           <!-- card -->
-          <div class="col s6 m3" style="display:none;">
-            <div id="megumin" class="card hoverable waves-effect waves-light">
+          <div class="col s6 m3">
+            <div id="rem" class="card hoverable waves-effect waves-light">
               <div class="card-image">
-                <img src="images/megumin.jpg">
+                <img src="images/rem.jpg">
                 <div class="titleText">
-                  Megumin
+                  Rem
                 </div>
                 <audio class="player" controls>
-                  <source src="sounds/megumin.mp3" type="audio/mpeg">
+                  <source src="sounds/rem.mp3" type="audio/mpeg">
                 </audio>
               </div>
             </div>
@@ -254,7 +265,8 @@ Hello
           </h5>
           <!-- card -->
           <div class="col s6 m3">
-            <div id="rise3" class="card hoverable waves-effect waves-light">
+            <div id="rise3" class="card hoverable waves-effect waves-light"
+                data-position="right" data-delay="0" data-tooltip="Equip the default announcer to use. Or use the GlaDOS announcer for even more lines!">
               <div class="card-image">
                 <img src="images/rise3.jpg">
                 <div class="titleText">
@@ -592,17 +604,14 @@ Hello
       <div id="modal" class="modal">
         <div class="modal-content">
           <h5>Installation guide</h5>
-          <p>1. Install Dota 2 Workshop Tools DLC from Steam (Requires x64)</p>
-          <p>2. Download the sound files.</p>
-          <p>3. Download your custom installation script <b>(install.bat)</b>.</p>
-          <p>4. Extract the ZIP file.</p>
-          <p>5. Place <b>install.bat</b> into the extracted <b>harem_spring_2016</b> folder. </p>
+          <p>1. Install Dota 2 Workshop Tools DLC from Steam (Requires x64).</p>
+          <p>2. Download the <a href="https://my.mixtape.moe/ewppgq.zip">sound files</a></p>
+          <p>3. Download your custom installation script: <a id="confirm" href="#">install.bat</a></p>
+          <p>4. Extract the sounds ZIP file.</p>
+          <p>5. Place <b>install.bat</b> into the extracted <b>harem_fall_2016</b> folder. </p>
           <p>6. Run <b>install.bat</b> and follow the instructions.</p>
-          <p>7. (Optional) If you have the Rise announcer, equip the GlaDOS announcer for additional lines.</p>
         </div>
         <div class="modal-footer">
-          <a id="confirm" class="waves-effect waves-light btn-large btn-flat"><i class="material-icons left">file_download</i>Script</a>
-          <a href="https://my.mixtape.moe/uylvaq.zip" class="waves-effect waves-light btn-large btn-flat"><i class="material-icons left">file_download</i>Sounds</a>
         </div>
       </div>
       <!-- End Modal -->
@@ -634,7 +643,7 @@ Hello
       <div class="row">
         <div class="col s12 m7 l6">
           <h5 class="grey-text text-lighten-4 header">Current poll</h5>
-          <iframe src="http://strawpoll.me/embed_1/7268675" style="width: 400px; height: 400px; border: 0;" scrolling="no">Loading poll...</iframe>
+            <iframe src="http://www.strawpoll.me/embed_1/11221209" frameborder="0" style="width:100%;height:300px;border:0;">Loading poll...</iframe>
         </div>
         <div class="divide"></div>
         <div class="col s12 m5 l6">

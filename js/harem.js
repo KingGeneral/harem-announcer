@@ -43,4 +43,7 @@ function hideVideo(e) {
 }
 $(document).ready(function(){
   $('.scrollspy').scrollSpy();
+  $('#rise3').tooltip({delay: 0});
 });
+
+
